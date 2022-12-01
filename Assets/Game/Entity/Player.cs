@@ -6,15 +6,28 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private EntityMovementData _setting;
 
-    private EntityMovement _movement;
+    private Ability _currentAbility;
+    public EntityMovement Movement { get; private set; }
 
     private void Start()
     {
-        _movement = new EntityMovement(_setting);
+        Movement = new EntityMovement(_setting);
+
+        SetNewAblility(new Dash(Movement, _setting.DashPower));
     }
 
     public void Move(Vector2 direction)
     {
-        _movement.Move(direction);
+        Movement.Move(direction);
+    }
+
+    public void SetNewAblility(Ability ability)
+    {
+        _currentAbility = ability;
+    }
+
+    public void UseAblility()
+    {
+        _currentAbility.Action();
     }
 }

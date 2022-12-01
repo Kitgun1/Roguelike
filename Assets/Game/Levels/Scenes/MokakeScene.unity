@@ -179,7 +179,9 @@ MonoBehaviour:
     Rigidbody: {fileID: 309220100}
     MovementSpeed: 500
     MaxSpeed: 10
-    MovementSmooth: 0.002
+    DashPower: 200
+    DashTime: 0.2
+    MovementSmooth: 0.015
 --- !u!212 &309220102
 SpriteRenderer:
   m_ObjectHideFlags: 0
