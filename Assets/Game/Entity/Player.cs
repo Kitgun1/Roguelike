@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     {
         Movement = new EntityMovement(_setting);
 
-        SetNewAblility(new Dash(Movement, _setting.DashPower));
+        SetNewAblility(new TimeFreeze(1f, 0f));
     }
 
     public void Move(Vector2 direction)
