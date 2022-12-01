@@ -8,10 +8,11 @@ public class PlayerInput : MonoBehaviour
     {
         Vector2 direction;
 
-        direction.x = Input.GetAxis("Horizontal");
-        direction.y = Input.GetAxis("Vertical");
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.y = Input.GetAxisRaw("Vertical");
 
         ReadButtons();
+
         _player.Move(direction);
     }
 

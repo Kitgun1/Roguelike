@@ -20,17 +20,15 @@ public class EntityMovement : IMove
         if (_state != MoveState.Moveing)
             return;
 
-        _currentDirection = direction;
         Vector2 targetVelocity = new Vector2(direction.x, direction.y) * _data.MovementSpeed * Time.fixedDeltaTime;
+        _data.Rigidbody.velocity = Vector2.ClampMagnitude(Vector2.SmoothDamp(_data.Rigidbody.velocity, targetVelocity, ref _velocity, _data.MovementSmooth), _data.MaxSpeed);
 
-        _data.Rigidbody.velocity = Vector2.ClampMagnitude((Vector2.SmoothDamp(_data.Rigidbody.velocity, targetVelocity, ref _velocity, _data.MovementSmooth)), _data.MaxSpeed);
+        if (direction != Vector2.zero)
+            _currentDirection = direction;
     }
 
     public void Dash(float power)
     {
-        if (_currentDirection == Vector2.zero)
-            _currentDirection = Vector2.down;
-
         _currentDirection.Normalize();
         _data.Rigidbody.AddForce(_currentDirection * power);
         _state = MoveState.Dashing;
