@@ -15,7 +15,7 @@ public class EntityMovement : IMove
     {
         Vector2 targetVelocity = new Vector2(direction.x, direction.y) * _data.MovementSpeed * Time.fixedDeltaTime;
 
-        _data.Rigidbody.velocity = Vector2.SmoothDamp(_data.Rigidbody.velocity, targetVelocity, ref _velocity, _data.MovementSmooth);
+        _data.Rigidbody.velocity = Vector2.ClampMagnitude((Vector2.SmoothDamp(_data.Rigidbody.velocity, targetVelocity, ref _velocity, _data.MovementSmooth)), _data.MaxSpeed);
     }
 }
 
@@ -26,5 +26,6 @@ public struct EntityMovementData
     public Rigidbody2D Rigidbody;
 
     public float MovementSpeed;
+    public float MaxSpeed;
     [Range(0f, 0.1f)] public float MovementSmooth;
 }
