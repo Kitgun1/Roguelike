@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private EntityMovementData _setting;
+    [SerializeField] private FreezeCircle _freezeCircle;
 
     private Ability _currentAbility;
     public EntityMovement Movement { get; private set; }
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour
     {
         Movement = new EntityMovement(_setting);
 
-        SetNewAblility(new TimeFreeze(1f, 0f));
+        SetNewAblility(new TimeFreeze(1f, 0f, _freezeCircle));
     }
 
     public void Move(Vector2 direction)
