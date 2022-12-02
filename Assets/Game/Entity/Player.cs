@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private EntityMovementData _setting;
     [SerializeField] private FreezeCircle _freezeCircle;
+    [SerializeField] private float _abilityTakeDown;
 
     private Ability _currentAbility;
     public EntityMovement Movement { get; private set; }
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
     {
         Movement = new EntityMovement(_setting);
 
-        SetNewAblility(new TimeFreeze(1f, 0f, _freezeCircle));
+        SetNewAblility(new TimeFreeze(2f, 0.03f, 0.1f, transform, _freezeCircle, _abilityTakeDown));
     }
 
     public void Move(Vector2 direction)
@@ -29,6 +30,17 @@ public class Player : MonoBehaviour
 
     public void UseAblility()
     {
-        _currentAbility.Action();
+        if (_currentAbility.AbleToAct)
+        {
+            _currentAbility.Action();
+            _currentAbility.AbleToAct = false;
+            StartCoroutine(SetAbilityUseful(_currentAbility.TakeDownTime));
+        }
+    }
+
+    private IEnumerator SetAbilityUseful(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _currentAbility.AbleToAct = true;
     }
 }

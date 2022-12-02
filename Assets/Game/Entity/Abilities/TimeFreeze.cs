@@ -5,31 +5,49 @@ public class TimeFreeze : Ability
 {
     private float _actionTime;
     private float _startValue;
+    private float _changeDelta;
+    private FreezeCircle _freezeCircleTemplate;
     private FreezeCircle _freezeCircle;
+    private Transform _parent;
 
-    public TimeFreeze(float actionTime, float startValue, FreezeCircle circle)
+    public TimeFreeze(float actionTime, float changeDelta, float startValue, Transform parent, FreezeCircle circle, float takeDown) : base(takeDown)
     {
         _actionTime = actionTime;
         _startValue = startValue;
-        _freezeCircle = circle;
+        _changeDelta = changeDelta;
+        _freezeCircleTemplate = circle;
+        _parent = parent;
     }
 
     public override void Action()
     {
-        TimeScale.Set(_startValue);
-        _freezeCircle.StartShowCircle();
+        TimeScale.Set(Time.timeScale);
+        _freezeCircle = Object.Instantiate(_freezeCircleTemplate, _parent.position, Quaternion.identity);
+
+        CouroutineStarter.Instance.StartCoroutine(FreezeTime());
         CouroutineStarter.Instance.StartCoroutine(ReturnTime());
+    }
+
+    private IEnumerator FreezeTime()
+    {
+        _freezeCircle.Grew();
+        while (TimeScale.Value > _startValue)
+        {
+            TimeScale.Set(Mathf.MoveTowards(TimeScale.Value, _startValue, _changeDelta));
+            yield return new WaitForFixedUpdate();
+        }
     }
 
     private IEnumerator ReturnTime()
     {
-        for (float i = _startValue; i < 1; i += 0.01f)
-        {
-            TimeScale.Set(i);
+        yield return new WaitForSeconds(_actionTime);
 
-            yield return new WaitForSecondsRealtime(_actionTime / 100);
+        _freezeCircle.Decrease();
+        while (TimeScale.Value < 1)
+        {
+            TimeScale.Set(Mathf.MoveTowards(TimeScale.Value, 1, _changeDelta));
+
+            yield return new WaitForFixedUpdate();
         }
-        TimeScale.Set(1);
-        _freezeCircle.StopShowCircle();
     }
 }

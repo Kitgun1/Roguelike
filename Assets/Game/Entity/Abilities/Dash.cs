@@ -8,7 +8,7 @@ public class Dash : Ability
         _movement.Dash(_power);
     }
 
-    public Dash(EntityMovement movement, float power)
+    public Dash(EntityMovement movement, float power, float takeDown) : base(takeDown)
     {
         _movement = movement;
         _power = power;
