@@ -4,7 +4,7 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private Player _player;
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector2 direction;
 

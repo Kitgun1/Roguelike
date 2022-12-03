@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Mission : MonoBehaviour
+[CreateAssetMenu(fileName = "Mission", menuName = "CreateMissions/Missions", order = 1)]
+public class Mission : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [field: SerializeField] public string Info { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public event UnityAction<Mission> Complete;
 }

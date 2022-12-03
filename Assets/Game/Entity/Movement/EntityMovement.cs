@@ -20,7 +20,7 @@ public class EntityMovement : IMove
         if (_state != MoveState.Moveing)
             return;
 
-        Vector2 targetVelocity = new Vector2(direction.x, direction.y) * _data.MovementSpeed * Time.fixedDeltaTime;
+        Vector2 targetVelocity = new Vector2(direction.x, direction.y) * _data.MovementSpeed * Time.deltaTime;
         _data.Rigidbody.velocity = Vector2.ClampMagnitude(Vector2.SmoothDamp(_data.Rigidbody.velocity, targetVelocity, ref _velocity, _data.MovementSmooth), _data.MaxSpeed);
 
         if (direction != Vector2.zero)
