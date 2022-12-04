@@ -1,4 +1,4 @@
-public enum TrapType 
+public enum TrapType
 {
     Move = -1,
     MoveAndTurn = 0,
