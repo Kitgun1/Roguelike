@@ -14,6 +14,11 @@ public class Level : MonoBehaviour
 
     private void Start()
     {
+        CurrentRoom = _rooms[0];
+    }
+
+    public void StartGame()
+    {
         SelectRoom(_rooms[0]);
     }
 

@@ -5,12 +5,19 @@ public class Room : MonoBehaviour
 {
     [SerializeField] private List<Mission> _missions;
     [SerializeField] private List<Trap> _traps;
+    [SerializeField] private bool _open;
 
+    public bool Open => _open;
     public IReadOnlyList<Mission> Missions => _missions;
 
     public void Select()
     {
+        
+    }
 
+    public void OpenRoom()
+    {
+        _open = true;
     }
 
     private void OnMissionComplete(Mission mission)

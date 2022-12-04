@@ -3,8 +3,9 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private Player _player;
+    [SerializeField] private LevelStarter _level;
 
-    private void FixedUpdate()
+    private void Update()
     {
         Vector2 direction;
 
@@ -23,5 +24,11 @@ public class PlayerInput : MonoBehaviour
             _player.UseAblility();
             StartCoroutine(_player.Movement.ReturnToMove());
         }
+
+        if (Input.GetKeyDown(KeyCode.KeypadEnter)) 
+        {
+            _level.StartGame();
+        }
+            
     }
 }
