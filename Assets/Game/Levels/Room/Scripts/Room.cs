@@ -6,9 +6,11 @@ public class Room : MonoBehaviour
     [SerializeField] private List<Mission> _missions;
     [SerializeField] private List<Trap> _traps;
     [SerializeField] private bool _open;
+    [SerializeField] private RoomGrid _position;
 
     public bool Open => _open;
     public IReadOnlyList<Mission> Missions => _missions;
+    public RoomGrid Position => _position;
 
     public void Select()
     {
