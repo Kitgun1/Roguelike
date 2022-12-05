@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: {fileID: 27726985}
+  _levelStarter: {fileID: 27726987}
   _player: {fileID: 309220101}
 --- !u!114 &27726987
 MonoBehaviour:
@@ -1110,7 +1111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timer: {fileID: 633385957}
   _text: {fileID: 1003716688}
-  _stringLength: 5
+  _stringLength: 8
 --- !u!1 &1012386495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7682144333836425108, guid: 3b521903938c58a4c92e1ecdfd84ea3f, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7682144333836425109, guid: 3b521903938c58a4c92e1ecdfd84ea3f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2174,11 +2179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7682144333836425111, guid: 3b521903938c58a4c92e1ecdfd84ea3f, type: 3}
       propertyPath: _setting.MaxSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7682144333836425111, guid: 3b521903938c58a4c92e1ecdfd84ea3f, type: 3}
       propertyPath: _setting.MovementSpeed
-      value: 3000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 7682144333836425111, guid: 3b521903938c58a4c92e1ecdfd84ea3f, type: 3}
       propertyPath: _setting.MovementSmooth

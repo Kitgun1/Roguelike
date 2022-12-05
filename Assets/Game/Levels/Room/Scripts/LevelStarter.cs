@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelStarter : MonoBehaviour
 {
@@ -7,11 +8,14 @@ public class LevelStarter : MonoBehaviour
     [SerializeField] private Level _level;
     [SerializeField] private ButtonHandler _buttonHandler;
 
+    public event UnityAction LevelStarted;
+
     public void StartGame()
     {
         _timer.StartCount();
         _player.StartLevel();
         _level.StartGame();
+        LevelStarted?.Invoke();
     }
 
     private void OnEnable()

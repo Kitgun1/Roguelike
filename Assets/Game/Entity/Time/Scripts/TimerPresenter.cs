@@ -17,20 +17,14 @@ public class TimerPresenter : MonoBehaviour
         string text = "";
         string elapsedText = "";
 
-        if (elapsed >= Minute)
-        {
-            int minutes = (int)(elapsed / Minute);
-            int seconds = (int)(elapsed % Minute);
-            elapsedText = minutes.ToString() + ":";
-            if (seconds >= 10)
-                elapsedText += seconds;
-            else
-                elapsedText += "0" + seconds;
-        }
+
+        int minutes = (int)(elapsed / Minute);
+        float seconds = elapsed % Minute;
+        elapsedText = minutes.ToString() + ":";
+        if (seconds >= 10)
+            elapsedText += seconds;
         else
-        {
-            elapsedText = elapsed.ToString();
-        }
+            elapsedText += "0" + seconds;
 
         currentLength = Mathf.Clamp(_stringLength, 0, elapsedText.Length);
 

@@ -3,20 +3,21 @@ using UnityEngine;
 public class PlayerTransorter : MonoBehaviour
 {
     [SerializeField] private Level _level;
+    [SerializeField] private LevelStarter _levelStarter;
     [SerializeField] private Player _player;
 
-    private void OnRoomChanged(Room room)
+    private void OnLevelStarted()
     {
-        _player.transform.SetParent(room.transform, false);
+        _player.transform.SetParent(_level.CurrentRoom.transform, false);
     }
 
     private void OnEnable()
     {
-        _level.OnRoomChanged += OnRoomChanged;
+        _levelStarter.LevelStarted += OnLevelStarted;
     }
 
     private void OnDisable()
     {
-        _level.OnRoomChanged -= OnRoomChanged;
+        _levelStarter.LevelStarted -= OnLevelStarted;
     }
 }
