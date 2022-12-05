@@ -24,11 +24,5 @@ public class PlayerInput : MonoBehaviour
             _player.UseAblility();
             StartCoroutine(_player.Movement.ReturnToMove());
         }
-
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)) 
-        {
-            _level.StartGame();
-        }
-            
     }
 }

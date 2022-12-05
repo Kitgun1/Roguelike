@@ -15,7 +15,6 @@ public class PlayerTransorter : MonoBehaviour
         _level.OnRoomChanged += OnRoomChanged;
     }
 
-
     private void OnDisable()
     {
         _level.OnRoomChanged -= OnRoomChanged;

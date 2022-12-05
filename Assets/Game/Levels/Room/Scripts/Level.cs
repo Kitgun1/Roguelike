@@ -15,26 +15,12 @@ public class Level : MonoBehaviour
 
     private void Start()
     {
-        CurrentRoom = _rooms[0];
+        SelectRoom(_rooms[0]);
     }
 
     public void StartGame()
     {
-        SelectRoom(_rooms[0]);
-    }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-            SelectRoom(_rooms[0]);
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-            SelectRoom(_rooms[1]);
-        if (Input.GetKeyDown(KeyCode.Keypad3))
-            SelectRoom(_rooms[2]);
-        if (Input.GetKeyDown(KeyCode.Keypad4))
-            SelectRoom(_rooms[3]);
-        if (Input.GetKeyDown(KeyCode.Keypad5))
-            SelectRoom(_rooms[4]);
     }
 
     public void SelectRoom(Room room)
