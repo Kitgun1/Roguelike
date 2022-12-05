@@ -1,7 +1,10 @@
+using KiUtilities.Structures;
+using System.Collections.Generic;
 using UnityEngine;
 
 public interface IPhysicalTrap
 {
-    public Vector2 MovePhysics(Transform trap, WayPointsData wayPoints, float speed, out WayPointsData newWayPoints);
-    public WayPointsData GetNewWayPoints(Vector3 currentPosition, WayPointsData wayPoints);
+    public void SetSettings(GameObject gameObject, TrapPhysicsPropertyData trapPhysicsPropertyData);
+
+    public void StartDirectionImpuls(Rigidbody2D rigidbody2D, KiRangeInt rangePower);
 }

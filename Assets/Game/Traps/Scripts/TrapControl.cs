@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TrapControl : MonoBehaviour
@@ -12,8 +13,6 @@ public class TrapControl : MonoBehaviour
 
     private Trap _trap;
 
-    public WayPointsData GetWayPoints() => _trapPhysicsProperty.WayPoints;
-
     #region Feature
 
     private bool _openMove => _trapType == TrapType.MoveAndTurn || _trapType == TrapType.Move;
@@ -26,7 +25,10 @@ public class TrapControl : MonoBehaviour
     {
         _trap = new Trap();
 
-        _trapProperty.Trap.position = _trapMoveProperty.WayPoints.StartPoint.position;
+        if (_trapType == TrapType.PhysicsAndTurn || _trapType == TrapType.Physics)
+        {
+            Physics();
+        }
     }
 
     private void Update()
@@ -42,11 +44,8 @@ public class TrapControl : MonoBehaviour
             case TrapType.Turn:
                 Turn();
                 break;
-            case TrapType.Physics:
-                Physics();
-                break;
             case TrapType.PhysicsAndTurn:
-                PhysicsAndTurn();
+                Turn();
                 break;
             default:
                 break;
@@ -67,15 +66,8 @@ public class TrapControl : MonoBehaviour
 
     private void Physics()
     {
-        WayPointsData newWayPoints;
-        _trapProperty.Trap.position = _trap.MovePhysics(_trapProperty.Trap, _trapPhysicsProperty.WayPoints, _trapPhysicsProperty.MoveSpeed * Time.deltaTime, out newWayPoints);
-        _trapPhysicsProperty.WayPoints = newWayPoints;
-    }
-
-    private void PhysicsAndTurn()
-    {
-        Physics();
-        Turn();
+        _trap.SetSettings(gameObject, _trapPhysicsProperty);
+        _trap.StartDirectionImpuls(GetComponent<Rigidbody2D>(), _trapPhysicsProperty.RangePowerImpuls);
     }
 
     private void TurnAndMove()
