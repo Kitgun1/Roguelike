@@ -6,12 +6,13 @@ using System.Linq;
 public class RoomTransiter : MonoBehaviour
 {
     [SerializeField] private List<TransitButton> _buttons;
-    [SerializeField] private List<Room> _rooms;
+    [SerializeField] private Level _level;
 
     public Room CurrentRoom { get; private set; }
 
     private void OnClick(RoomDirection direction)
     {
+        CurrentRoom = _level.CurrentRoom;
         RoomGrid targetPosition = CurrentRoom.Position;
 
         switch (direction)
@@ -30,11 +31,12 @@ public class RoomTransiter : MonoBehaviour
                 break;
         }
 
-        var targetRoom = _rooms.FirstOrDefault(p => p.Position.Position == targetPosition.Position);
+        var targetRoom = _level.Rooms.FirstOrDefault(p => p.Position.Position == targetPosition.Position);
 
         if (targetRoom != null)
         {
             targetRoom.Select();
+            _level.SelectRoom(targetRoom);
             CurrentRoom = targetRoom;
         }
     }

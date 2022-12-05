@@ -12,13 +12,15 @@ public class TransitButton : ButtonHandler
         OnClick?.Invoke(_direction);
     }
 
-    private void OnEnable()
+    private new void OnEnable()
     {
+        base.OnEnable();
         base.OnClick += OnButtonClick;
     }
 
-    private void OnDisable()
+    private new void OnDisable()
     {
+        base.OnDisable();
         base.OnClick -= OnButtonClick;
     }
 }

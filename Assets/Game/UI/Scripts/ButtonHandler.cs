@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class ButtonHandler : MonoBehaviour
 {
     [SerializeField] private Button _button;
@@ -13,12 +14,13 @@ public class ButtonHandler : MonoBehaviour
         OnClick?.Invoke();
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
+        _button = GetComponent<Button>();
         _button.onClick.AddListener(Click);
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         _button.onClick.RemoveListener(Click);
     }

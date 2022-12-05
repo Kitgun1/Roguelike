@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc462846e1aff246b73d85c62b1252a, type: 3}
-  m_Name: Die 1
+  m_Script: {fileID: 11500000, guid: 2a4c138b376730543b5df9a9f7cdaaf8, type: 3}
+  m_Name: LiveMission 2
   m_EditorClassIdentifier: 
-  <Info>k__BackingField: "\u0425\u0437"
+  <Info>k__BackingField: "\u0416\u0438\u0432\u0438 \u0431\u0440\u043E 20 \u0441\u0435\u043A"
+  <Time>k__BackingField: 20

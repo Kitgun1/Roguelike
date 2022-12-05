@@ -9,6 +9,7 @@ public class Level : MonoBehaviour
     [SerializeField] private Player _player;
 
     public Room CurrentRoom { get; private set; }
+    public IReadOnlyList<Room> Rooms => _rooms;
 
     public event UnityAction<Room> OnRoomChanged;
 
