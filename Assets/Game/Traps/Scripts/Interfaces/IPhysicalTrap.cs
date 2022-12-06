@@ -6,5 +6,5 @@ public interface IPhysicalTrap
 {
     public void SetSettings(GameObject gameObject, TrapPhysicsPropertyData trapPhysicsPropertyData);
 
-    public void StartDirectionImpuls(Rigidbody2D rigidbody2D, KiRangeInt rangePower);
+    public void StartDirectionImpuls(Rigidbody2D rigidbody2D, int rangePower);
 }
