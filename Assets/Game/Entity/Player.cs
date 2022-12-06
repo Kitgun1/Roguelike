@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDying
 {
     [SerializeField] private EntityMovementData _setting;
     [SerializeField] private FreezeCircle _freezeCircle;
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
     private Ability _currentAbility;
     private bool _gameStarted = false;
     public EntityMovement Movement { get; private set; }
+
+    public event UnityAction Died;
 
     private void Start()
     {
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour
     public void StartLevel()
     {
         _gameStarted = true;
+        gameObject.SetActive(true);
     }
 
     public void Move(Vector2 direction)
@@ -49,5 +53,12 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         _currentAbility.AbleToAct = true;
+    }
+
+    public void Die()
+    {
+        Died?.Invoke();
+        _gameStarted = false;
+        gameObject.SetActive(false);
     }
 }

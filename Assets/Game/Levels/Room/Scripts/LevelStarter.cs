@@ -18,13 +18,20 @@ public class LevelStarter : MonoBehaviour
         LevelStarted?.Invoke();
     }
 
+    private void OnPlayerDied()
+    {
+        _timer.StopTimer();
+    }
+
     private void OnEnable()
     {
         _buttonHandler.OnClick += StartGame;
+        _player.Died += OnPlayerDied;
     }
 
     private void OnDestroy()
     {
         _buttonHandler.OnClick -= StartGame;
+        _player.Died -= OnPlayerDied;
     }
 }

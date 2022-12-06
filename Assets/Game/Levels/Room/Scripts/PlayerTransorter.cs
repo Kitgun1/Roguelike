@@ -9,6 +9,7 @@ public class PlayerTransorter : MonoBehaviour
     private void OnLevelStarted()
     {
         _player.transform.SetParent(_level.CurrentRoom.transform, false);
+        _player.transform.localPosition = Vector3.zero;
     }
 
     private void OnEnable()

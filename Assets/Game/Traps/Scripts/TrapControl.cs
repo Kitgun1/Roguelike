@@ -26,9 +26,10 @@ public class TrapControl : MonoBehaviour
         _trap = new Trap();
 
         if (_trapType == TrapType.PhysicsAndTurn || _trapType == TrapType.Physics)
-        {
             Physics();
-        }
+
+        if (_trapType == TrapType.Move || _trapType == TrapType.MoveAndTurn)
+            _trapProperty.Trap.position = _trapMoveProperty.WayPoints.StartPoint.position;
     }
 
     private void Update()
@@ -42,8 +43,6 @@ public class TrapControl : MonoBehaviour
                 TurnAndMove();
                 break;
             case TrapType.Turn:
-                Turn();
-                break;
             case TrapType.PhysicsAndTurn:
                 Turn();
                 break;
@@ -66,10 +65,10 @@ public class TrapControl : MonoBehaviour
 
     private void Physics()
     {
-        _trap.SetSettings(gameObject, _trapPhysicsProperty);
+        _trap.SetSettings(_trapProperty.Trap.gameObject, _trapPhysicsProperty);
         if (_trapPhysicsProperty.RangePowerImpuls == 0)
             _trapPhysicsProperty.RangePowerImpuls = KiRandomExtension.RandomValueByFilter(-1, 1, 0);
-        _trap.StartDirectionImpuls(GetComponent<Rigidbody2D>(), _trapPhysicsProperty.RangePowerImpuls);
+        _trap.StartDirectionImpuls(_trapProperty.Trap.GetComponent<Rigidbody2D>(), _trapPhysicsProperty.RangePowerImpuls);
     }
 
     private void TurnAndMove()
