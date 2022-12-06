@@ -1,3 +1,4 @@
+using KiUtilities.Random;
 using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
@@ -67,6 +68,8 @@ public class TrapControl : MonoBehaviour
     private void Physics()
     {
         _trap.SetSettings(gameObject, _trapPhysicsProperty);
+        if (_trapPhysicsProperty.RangePowerImpuls == 0)
+            _trapPhysicsProperty.RangePowerImpuls = KiRandomExtension.RandomValueByFilter(-1, 1, 0);
         _trap.StartDirectionImpuls(GetComponent<Rigidbody2D>(), _trapPhysicsProperty.RangePowerImpuls);
     }
 
