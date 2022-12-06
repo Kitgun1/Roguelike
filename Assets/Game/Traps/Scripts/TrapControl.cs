@@ -1,6 +1,5 @@
 using KiUtilities.Random;
 using NaughtyAttributes;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrapControl : MonoBehaviour
