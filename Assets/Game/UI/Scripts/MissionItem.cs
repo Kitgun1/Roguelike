@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Purchasing;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class MissionItem : MonoBehaviour
+public class MissionItem : MonoBehaviour, IMissionItem
 {
     private string _tag;
 
     [SerializeField] private TMP_Text _description;
     [SerializeField] private TMP_Text _done;
     [SerializeField] private TMP_Text _need;
+    [SerializeField] private ParticleSystem _particleComplited;
 
     private int _doneValue;
     private int _needValue;
+
+    public event UnityAction<string> OnComplete;
 
     private enum ParameterType
     {
@@ -61,6 +62,12 @@ public class MissionItem : MonoBehaviour
             _doneValue += value;
 
         Display(ParameterType.Done);
+
+        if (_doneValue >= _needValue)
+        {
+            OnComplete?.Invoke(_tag);
+            _particleComplited.Play();
+        }
     }
 
     public void AddNeed(int value)
