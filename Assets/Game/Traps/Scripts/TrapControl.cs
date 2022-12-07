@@ -21,10 +21,14 @@ public class TrapControl : MonoBehaviour
 
     #endregion
 
-    private void Start()
+    private void Awake()
     {
         _trap = new Trap();
+        _trap.SetSettings(_trapProperty.Trap.gameObject, _trapPhysicsProperty);
+    }
 
+    private void OnEnable()
+    {
         if (_trapType == TrapType.PhysicsAndTurn || _trapType == TrapType.Physics)
             Physics();
 
@@ -65,10 +69,11 @@ public class TrapControl : MonoBehaviour
 
     private void Physics()
     {
-        _trap.SetSettings(_trapProperty.Trap.gameObject, _trapPhysicsProperty);
+
         if (_trapPhysicsProperty.RangePowerImpuls == 0)
             _trapPhysicsProperty.RangePowerImpuls = KiRandomExtension.RandomValueByFilter(-1, 1, 0);
-        _trap.StartDirectionImpuls(_trapProperty.Trap.GetComponent<Rigidbody2D>(), _trapPhysicsProperty.RangePowerImpuls);
+
+        _trap.StartDirectionImpuls(_trapProperty.Trap.GetComponent<Rigidbody2D>(), new Vector2((-1 * _trapPhysicsProperty.RangePowerImpuls).RandomValueByFilter(_trapPhysicsProperty.RangePowerImpuls, 0, KiRandomExtension.RandomValue(0, 100)), (-1 * _trapPhysicsProperty.RangePowerImpuls).RandomValueByFilter(_trapPhysicsProperty.RangePowerImpuls, 0, KiRandomExtension.RandomValue(0, 100))));
     }
 
     private void TurnAndMove()

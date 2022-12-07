@@ -4,7 +4,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     [SerializeField] private List<Mission> _missions;
-    [SerializeField] private List<Trap> _traps;
+    [SerializeField] private TrapSpawner _trapSpawner;
     [SerializeField] private bool _open;
     [SerializeField] private RoomGrid _position;
 
@@ -15,6 +15,16 @@ public class Room : MonoBehaviour
     public void Select()
     {
         
+    }
+
+    public void OnLevelStarted()
+    {
+        _trapSpawner.OnLevelStarted();
+    }
+
+    public void OnLevelFinished()
+    {
+        _trapSpawner.OnLevelFinished();
     }
 
     public void OpenRoom()

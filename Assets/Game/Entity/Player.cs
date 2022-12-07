@@ -8,6 +8,7 @@ public class Player : MonoBehaviour, IDying
     [SerializeField] private EntityMovementData _setting;
     [SerializeField] private FreezeCircle _freezeCircle;
     [SerializeField] private float _abilityTakeDown;
+    [SerializeField] private GameObject _playerVisible;
 
     private Ability _currentAbility;
     private bool _gameStarted = false;
@@ -19,13 +20,13 @@ public class Player : MonoBehaviour, IDying
     {
         Movement = new EntityMovement(_setting);
 
-        SetNewAblility(new TimeFreeze(2f, 0.03f, 0.1f, transform, _freezeCircle, _abilityTakeDown));
+        SetNewAblility(new Dash(Movement, _setting.DashPower, _abilityTakeDown));
     }
 
     public void StartLevel()
     {
         _gameStarted = true;
-        gameObject.SetActive(true);
+        _playerVisible.SetActive(true);
     }
 
     public void Move(Vector2 direction)
@@ -55,10 +56,13 @@ public class Player : MonoBehaviour, IDying
         _currentAbility.AbleToAct = true;
     }
 
-    public void Die()
+    public void TryDie()
     {
-        Died?.Invoke();
-        _gameStarted = false;
-        gameObject.SetActive(false);
+        if (Movement.State == MoveState.Moveing)
+        {
+            Died?.Invoke();
+            _gameStarted = false;
+            _playerVisible.SetActive(false);
+        }
     }
 }

@@ -1,4 +1,4 @@
 public interface IDying
 {
-    public void Die();
+    public void TryDie();
 }

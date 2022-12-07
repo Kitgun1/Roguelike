@@ -67,9 +67,9 @@ public class Trap : ITrappable, IMovableTrap, ITurnableTrap, IPhysicalTrap
         rigidbody2D.sharedMaterial = trapPhysicsPropertyData.PhysicsMaterial2D;
     }
 
-    public void StartDirectionImpuls(Rigidbody2D rigidbody2D, int rangePower)
+    public void StartDirectionImpuls(Rigidbody2D rigidbody2D, Vector2 direction)
     {
-        rigidbody2D.AddForce(new Vector2(-rangePower.RandomValueByFilter(rangePower, 0, KiRandomExtension.RandomValue(0, 100)), -rangePower.RandomValueByFilter(rangePower, 0, KiRandomExtension.RandomValue(0, 100))), ForceMode2D.Impulse);
+        rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
     }
 
     #endregion

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EntityMovement : IMove
 {
+    public MoveState State => _state;
+
     private EntityMovementData _data;
 
     private Vector2 _velocity = Vector2.zero;

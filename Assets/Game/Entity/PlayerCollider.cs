@@ -9,7 +9,7 @@ public class PlayerCollider : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out TrapCollider trap))
         {
-            _player.Die();
+            _player.TryDie();
         }
     }
 }

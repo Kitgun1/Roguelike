@@ -21,6 +21,7 @@ public class LevelStarter : MonoBehaviour
     private void OnPlayerDied()
     {
         _timer.StopTimer();
+        _level.OnPlayerDied();
     }
 
     private void OnEnable()

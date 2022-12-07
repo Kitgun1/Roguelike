@@ -20,7 +20,7 @@ public class Level : MonoBehaviour
 
     public void StartGame()
     {
-
+        CurrentRoom.OnLevelStarted();
     }
 
     public void SelectRoom(Room room)
@@ -29,5 +29,10 @@ public class Level : MonoBehaviour
         room.Select();
 
         OnRoomChanged?.Invoke(room);
+    }
+
+    public void OnPlayerDied()
+    {
+        CurrentRoom.OnLevelFinished();
     }
 }
