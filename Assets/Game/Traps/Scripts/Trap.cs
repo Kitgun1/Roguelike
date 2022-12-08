@@ -72,5 +72,10 @@ public class Trap : ITrappable, IMovableTrap, ITurnableTrap, IPhysicalTrap
         rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
     }
 
+    public void RandomImpuls(Rigidbody2D rigidbody2D, Vector2 direction)
+    {
+        rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
+    }
+
     #endregion
 }
