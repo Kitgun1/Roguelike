@@ -13,7 +13,7 @@ public class Gate : MonoBehaviour, IGate
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_gateEnumerator != null && collision.gameObject.layer == 7) return;
+        if (_gateEnumerator != null && collision.gameObject.layer == _gateProperty.Layer) return;
 
         _player = collision.transform;
         _gateEnumerator = OpenGate(_gateProperty.DelayOpen, _player);
@@ -22,7 +22,7 @@ public class Gate : MonoBehaviour, IGate
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (_gateEnumerator != null && collision.gameObject.layer == 7) return;
+        if (_gateEnumerator != null && collision.gameObject.layer == _gateProperty.Layer) return;
 
         _player = null;
         StopCoroutine(_gateEnumerator);

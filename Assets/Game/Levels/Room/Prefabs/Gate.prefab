@@ -4949,7 +4949,5 @@ MonoBehaviour:
   _gateProperty:
     ParticleSystemEnter: {fileID: 5032219664061343711}
     ParticleSystemTeleport: {fileID: 699509015257662618, guid: ab2b6620a8702274dba2654870f79b6a, type: 3}
-    LayerMask:
-      serializedVersion: 2
-      m_Bits: 384
+    Layer: 0
     DelayOpen: 2

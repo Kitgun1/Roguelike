@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System;
 using UnityEngine;
 
@@ -6,6 +7,6 @@ public struct GateData
 {
     public ParticleSystem ParticleSystemEnter;
     public ParticleSystem ParticleSystemTeleport;
-    public LayerMask LayerMask;
+    [Layer] public int Layer;
     public float DelayOpen;
 }
