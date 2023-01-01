@@ -7,6 +7,7 @@ public class Trap : ITrappable, IMovableTrap, ITurnableTrap, IPhysicalTrap
 {
     private Vector2 _oldTargetPosition = Vector2.zero;
     private LayerMask _layerMask = 6;
+    private Vector2 _originPosition;
 
     public event UnityAction OnDestroy;
     public event UnityAction<int, int> OnApplyDamage;

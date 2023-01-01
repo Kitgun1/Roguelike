@@ -24,24 +24,26 @@ public class TrapSpawner : MonoBehaviour
     {
         _spawning = false;
         _elapsedTime = 0;
-        ClearRoom();
+        ReturnRoom();
     }
 
     private void Update()
     {
         if (_spawning)
-        {
             _elapsedTime += Time.deltaTime;
-
-        }
     }
 
-    private void ClearRoom()
+    private void ReturnRoom()
     {
         foreach (var trap in _spawnedTraps)
+        {
             Destroy(trap.gameObject);
+        }
         foreach (var trap in _traps)
+        {
+            trap.ReturnToOrigin();
             trap.gameObject.SetActive(false);
+        }
 
         _spawnedTraps.Clear();
     }

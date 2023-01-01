@@ -12,7 +12,7 @@ public class TrapControl : MonoBehaviour
     [ShowIf(nameof(_openPhysics)), SerializeField] private TrapPhysicsPropertyData _trapPhysicsProperty;
 
     private Trap _trap;
-    private Rigidbody2D _rigidbody2D;
+    private Vector2 _originPosition;
 
     #region Feature
 
@@ -26,7 +26,6 @@ public class TrapControl : MonoBehaviour
     {
         _trap = new Trap();
         _trap.SetSettings(_trapProperty.Trap.gameObject, _trapPhysicsProperty);
-        _rigidbody2D = _trapProperty.Trap.GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -36,6 +35,11 @@ public class TrapControl : MonoBehaviour
 
         if (_trapType == TrapType.Move || _trapType == TrapType.MoveAndTurn)
             _trapProperty.Trap.position = _trapMoveProperty.WayPoints.StartPoint.position;
+    }
+
+    private void Start()
+    {
+        _originPosition = transform.position;
     }
 
     private void Update()
@@ -48,14 +52,8 @@ public class TrapControl : MonoBehaviour
             case TrapType.MoveAndTurn:
                 TurnAndMove();
                 break;
-            case TrapType.Physics:
-                TryRandomImpuls(_rigidbody2D);
-                break;
             case TrapType.Turn:
-                Turn();
-                break;
             case TrapType.PhysicsAndTurn:
-                TryRandomImpuls(_rigidbody2D);
                 Turn();
                 break;
             default:
@@ -77,31 +75,21 @@ public class TrapControl : MonoBehaviour
 
     private void Physics()
     {
-
         if (_trapPhysicsProperty.RangePowerImpuls == 0)
             _trapPhysicsProperty.RangePowerImpuls = KiRandomExtension.RandomValueByFilter(-1, 1, 0);
 
-        _trap.StartDirectionImpuls(_rigidbody2D, new Vector2((-1 * _trapPhysicsProperty.RangePowerImpuls).RandomValueByFilter(_trapPhysicsProperty.RangePowerImpuls, 0, KiRandomExtension.RandomValue(0, 100)), (-1 * _trapPhysicsProperty.RangePowerImpuls).RandomValueByFilter(_trapPhysicsProperty.RangePowerImpuls, 0, KiRandomExtension.RandomValue(0, 100))));
-    }
-
-    public void TryRandomImpuls(Rigidbody2D rigidbody2D)
-    {
-        if (rigidbody2D.velocity.x == 0)
-        {
-            _trap.RandomImpuls(rigidbody2D, new Vector2(KiRandomExtension.RandomValue(-1 * _trapPhysicsProperty.RangePowerImpuls, _trapPhysicsProperty.RangePowerImpuls), 0f));
-            return;
-        }
-        if (rigidbody2D.velocity.y == 0)
-        {
-            _trap.RandomImpuls(rigidbody2D, new Vector2(0f, KiRandomExtension.RandomValue(-1 * _trapPhysicsProperty.RangePowerImpuls, _trapPhysicsProperty.RangePowerImpuls)));
-            return;
-        }
+        _trap.StartDirectionImpuls(_trapProperty.Trap.GetComponent<Rigidbody2D>(), new Vector2((-1 * _trapPhysicsProperty.RangePowerImpuls).RandomValueByFilter(_trapPhysicsProperty.RangePowerImpuls, 0, KiRandomExtension.RandomValue(0, 100)), (-1 * _trapPhysicsProperty.RangePowerImpuls).RandomValueByFilter(_trapPhysicsProperty.RangePowerImpuls, 0, KiRandomExtension.RandomValue(0, 100))));
     }
 
     private void TurnAndMove()
     {
         Turn();
         Move();
+    }
+
+    public void ReturnToOrigin()
+    {
+        _trapProperty.Trap.position = _originPosition;
     }
 
     #endregion
