@@ -11,6 +11,8 @@ public class TrapSpawner : MonoBehaviour
     private List<TrapControl> _spawnedTraps = new List<TrapControl>();
     private bool _spawning = false;
     private float _elapsedTime;
+    private int _currentBundle;
+    private int _spawned;
 
     public void OnLevelStarted()
     {
@@ -24,13 +26,46 @@ public class TrapSpawner : MonoBehaviour
     {
         _spawning = false;
         _elapsedTime = 0;
+        _spawned = 0;
         ReturnRoom();
     }
 
     private void Update()
     {
         if (_spawning)
-            _elapsedTime += Time.deltaTime;
+            HandleSpawn();
+    }
+
+    private void HandleSpawn()
+    {
+        LevelTrapsBundle current = _bundles[_currentBundle];
+
+        _elapsedTime += Time.deltaTime;
+        if (_elapsedTime >= current.SpawnDelay)
+        {
+            Spawn(current.Trap);
+
+            _elapsedTime = 0;
+            _spawned++;
+            _bundles[_currentBundle] = current;
+            
+            if (_spawned >= current.Count)
+                LoadNextBundle();
+        }
+    }
+
+    private void Spawn(TrapControl trap)
+    {
+        _spawnedTraps.Add(Instantiate(trap, _parent));
+    }
+
+    private void LoadNextBundle()
+    {
+        if (_currentBundle < _bundles.Count - 1)
+            _currentBundle++;
+        else
+            _spawning = false;
+        _spawned = 0;
     }
 
     private void ReturnRoom()

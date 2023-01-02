@@ -894,6 +894,9 @@ MonoBehaviour:
   - <Trap>k__BackingField: {fileID: 6660424606232053174, guid: acfa82768de69aa489bb8649da3c0e7a, type: 3}
     <SpawnDelay>k__BackingField: 2
     <Count>k__BackingField: 2
+  - <Trap>k__BackingField: {fileID: 6660424606232053174, guid: acfa82768de69aa489bb8649da3c0e7a, type: 3}
+    <SpawnDelay>k__BackingField: 0.5
+    <Count>k__BackingField: 3
   _traps:
   - {fileID: 650631535}
   - {fileID: 1251436569}
