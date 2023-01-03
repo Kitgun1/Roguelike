@@ -9,16 +9,20 @@ public class Player : MonoBehaviour, IDying
     [SerializeField] private FreezeCircle _freezeCircle;
     [SerializeField] private float _abilityTakeDown;
     [SerializeField] private GameObject _playerVisible;
+    [SerializeField] private Animator _animator;
 
     private Ability _currentAbility;
     private bool _gameStarted = false;
+
     public EntityMovement Movement { get; private set; }
+    public EntityAnimation Animator { get; private set; }
 
     public event UnityAction Died;
 
     private void Start()
     {
         Movement = new EntityMovement(_setting);
+        Animator = new EntityAnimation(_animator);
 
         SetNewAblility(new Dash(Movement, _setting.DashPower, _abilityTakeDown));
     }
@@ -33,6 +37,8 @@ public class Player : MonoBehaviour, IDying
     {
         if (_gameStarted)
             Movement.Move(direction);
+
+        Animator.Animate(direction);
     }
 
     public void SetNewAblility(Ability ability)
