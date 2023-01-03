@@ -132,10 +132,10 @@ TextureImporter:
       name: character_idle_rigth_0
       rect:
         serializedVersion: 2
-        x: 109
-        y: 928
-        width: 139
-        height: 168
+        x: 0
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: character_idle_rigth_1
       rect:
         serializedVersion: 2
-        x: 469
-        y: 928
-        width: 139
-        height: 168
+        x: 360
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: character_idle_rigth_2
       rect:
         serializedVersion: 2
-        x: 829
-        y: 932
-        width: 139
-        height: 164
+        x: 720
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: character_idle_rigth_3
       rect:
         serializedVersion: 2
-        x: 1184
-        y: 933
-        width: 144
-        height: 163
+        x: 1080
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: character_idle_rigth_4
       rect:
         serializedVersion: 2
-        x: 1549
-        y: 928
-        width: 139
-        height: 169
+        x: 1440
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: character_idle_rigth_5
       rect:
         serializedVersion: 2
-        x: 1909
-        y: 928
-        width: 139
-        height: 170
+        x: 1800
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: character_idle_rigth_6
       rect:
         serializedVersion: 2
-        x: 2264
-        y: 928
-        width: 144
-        height: 173
+        x: 2160
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: character_idle_rigth_7
       rect:
         serializedVersion: 2
-        x: 2629
-        y: 928
-        width: 134
-        height: 176
+        x: 2520
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,10 +300,10 @@ TextureImporter:
       name: character_idle_rigth_8
       rect:
         serializedVersion: 2
-        x: 2989
-        y: 933
-        width: 133
-        height: 172
+        x: 2880
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +321,10 @@ TextureImporter:
       name: character_idle_rigth_9
       rect:
         serializedVersion: 2
-        x: 3349
-        y: 933
-        width: 133
-        height: 173
+        x: 3240
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,10 +342,10 @@ TextureImporter:
       name: character_idle_rigth_10
       rect:
         serializedVersion: 2
-        x: 3709
-        y: 928
-        width: 132
-        height: 178
+        x: 3600
+        y: 900
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,10 +363,10 @@ TextureImporter:
       name: character_idle_rigth_11
       rect:
         serializedVersion: 2
-        x: 829
-        y: 632
-        width: 132
-        height: 176
+        x: 720
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +384,10 @@ TextureImporter:
       name: character_idle_rigth_12
       rect:
         serializedVersion: 2
-        x: 1189
-        y: 632
-        width: 133
-        height: 176
+        x: 1080
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,10 +405,10 @@ TextureImporter:
       name: character_idle_rigth_13
       rect:
         serializedVersion: 2
-        x: 1549
-        y: 632
-        width: 133
-        height: 176
+        x: 1440
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,10 +426,10 @@ TextureImporter:
       name: character_idle_rigth_14
       rect:
         serializedVersion: 2
-        x: 1909
-        y: 632
-        width: 133
-        height: 173
+        x: 1800
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,10 +447,10 @@ TextureImporter:
       name: character_idle_rigth_15
       rect:
         serializedVersion: 2
-        x: 2269
-        y: 632
-        width: 134
-        height: 171
+        x: 2160
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,10 +468,10 @@ TextureImporter:
       name: character_idle_rigth_16
       rect:
         serializedVersion: 2
-        x: 2629
-        y: 632
-        width: 136
-        height: 169
+        x: 2520
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,10 +489,10 @@ TextureImporter:
       name: character_idle_rigth_17
       rect:
         serializedVersion: 2
-        x: 2989
-        y: 632
-        width: 139
-        height: 168
+        x: 2880
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -510,10 +510,10 @@ TextureImporter:
       name: character_idle_rigth_18
       rect:
         serializedVersion: 2
-        x: 3349
-        y: 632
-        width: 139
-        height: 168
+        x: 3240
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -531,10 +531,10 @@ TextureImporter:
       name: character_idle_rigth_19
       rect:
         serializedVersion: 2
-        x: 3709
-        y: 632
-        width: 139
-        height: 164
+        x: 3600
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

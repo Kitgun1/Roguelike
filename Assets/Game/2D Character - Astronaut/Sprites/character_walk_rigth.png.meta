@@ -132,10 +132,10 @@ TextureImporter:
       name: character_walk_rigth_0
       rect:
         serializedVersion: 2
-        x: 104
-        y: 645
-        width: 130
-        height: 163
+        x: 0
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: character_walk_rigth_1
       rect:
         serializedVersion: 2
-        x: 464
-        y: 637
-        width: 130
-        height: 163
+        x: 360
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: character_walk_rigth_2
       rect:
         serializedVersion: 2
-        x: 832
-        y: 643
-        width: 132
-        height: 169
+        x: 720
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: character_walk_rigth_3
       rect:
         serializedVersion: 2
-        x: 1192
-        y: 648
-        width: 142
-        height: 172
+        x: 1080
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: character_walk_rigth_4
       rect:
         serializedVersion: 2
-        x: 1551
-        y: 652
-        width: 147
-        height: 172
+        x: 1440
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: character_walk_rigth_5
       rect:
         serializedVersion: 2
-        x: 1912
-        y: 648
-        width: 146
-        height: 173
+        x: 1800
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: character_walk_rigth_6
       rect:
         serializedVersion: 2
-        x: 2279
-        y: 640
-        width: 139
-        height: 176
+        x: 2160
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: character_walk_rigth_7
       rect:
         serializedVersion: 2
-        x: 2639
-        y: 636
-        width: 139
-        height: 172
+        x: 2520
+        y: 600
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,10 +300,10 @@ TextureImporter:
       name: character_walk_rigth_8
       rect:
         serializedVersion: 2
-        x: 1919
-        y: 332
-        width: 139
-        height: 172
+        x: 1800
+        y: 300
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +321,10 @@ TextureImporter:
       name: character_walk_rigth_9
       rect:
         serializedVersion: 2
-        x: 2271
-        y: 351
-        width: 129
-        height: 161
+        x: 2160
+        y: 300
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,10 +342,10 @@ TextureImporter:
       name: character_walk_rigth_10
       rect:
         serializedVersion: 2
-        x: 2624
-        y: 355
-        width: 131
-        height: 162
+        x: 2520
+        y: 300
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,10 +363,10 @@ TextureImporter:
       name: character_walk_rigth_11
       rect:
         serializedVersion: 2
-        x: 2984
-        y: 357
-        width: 130
-        height: 163
+        x: 2880
+        y: 300
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +384,10 @@ TextureImporter:
       name: character_walk_rigth_12
       rect:
         serializedVersion: 2
-        x: 3344
-        y: 352
-        width: 130
-        height: 165
+        x: 3240
+        y: 300
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,10 +405,10 @@ TextureImporter:
       name: character_walk_rigth_13
       rect:
         serializedVersion: 2
-        x: 3704
-        y: 352
-        width: 130
-        height: 161
+        x: 3600
+        y: 300
+        width: 360
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
