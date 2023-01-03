@@ -83,7 +83,6 @@ public class TrapControl : MonoBehaviour
 
     private void Physics()
     {
-
         if (_trapPhysicsProperty.RangePowerImpuls == 0)
             _trapPhysicsProperty.RangePowerImpuls = KiRandomExtension.RandomValueByFilter(-1, 1, 0);
 

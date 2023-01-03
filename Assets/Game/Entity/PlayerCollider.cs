@@ -12,4 +12,4 @@ public class PlayerCollider : MonoBehaviour
             _player.TryDie();
         }
     }
-}
+} 

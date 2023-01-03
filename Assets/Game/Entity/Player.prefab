@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8267804142647172142}
   - component: {fileID: 2462732479584319317}
-  - component: {fileID: 5412379370217094838}
+  - component: {fileID: 6472464267549233603}
   - component: {fileID: 89636433557111671}
+  - component: {fileID: 1893284451}
   m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
@@ -75,19 +76,19 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 8793639957104055765, guid: 9c447c54c8e0416e9446cadb88c48fd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0692308, y: 1.323077}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5412379370217094838
-CircleCollider2D:
+--- !u!70 &6472464267549233603
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -100,8 +101,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.7763815, y: 1.2601235}
+  m_Direction: 0
 --- !u!114 &89636433557111671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +116,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 7682144333836425111}
+--- !u!95 &1893284451
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072366862003327443}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57e16c62535a330428145c1aa95be86e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7682144333836425105
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +147,7 @@ GameObject:
   - component: {fileID: 7682144333836425109}
   - component: {fileID: 7682144333836425111}
   - component: {fileID: 7682144333836425110}
-  - component: {fileID: 1159534676188074731}
+  - component: {fileID: 8315876201856801990}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -143,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 7682144333836425105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.31296, y: 0.4860513, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8267804142647172142}
@@ -164,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _setting:
     Rigidbody: {fileID: 7682144333836425110}
-    MovementSpeed: 500
+    MovementSpeed: 3000
     MaxSpeed: 5
     DashPower: 300
     DashTime: 0.1
@@ -172,6 +193,7 @@ MonoBehaviour:
   _freezeCircle: {fileID: 2349718366391326426, guid: df89df23ef561174baa0f9a2f4c8694c, type: 3}
   _abilityTakeDown: 2.8
   _playerVisible: {fileID: 5072366862003327443}
+  _animator: {fileID: 1893284451}
 --- !u!50 &7682144333836425110
 Rigidbody2D:
   serializedVersion: 4
@@ -192,9 +214,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &1159534676188074731
-CircleCollider2D:
+  m_Constraints: 4
+--- !u!70 &8315876201856801990
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -207,5 +229,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.7763815, y: 1.2601235}
+  m_Direction: 0
